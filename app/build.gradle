@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+
+        versionCode 1
+        versionName "1.0"
+
+        applicationId "com.triarc.tutorial.android.room_rxjava"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    /*Kotlin dependency*/
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    /*Android SDK dependencies*/
+    implementation "com.android.support:design:$sdk_version"
+    implementation "com.android.support:appcompat-v7:$sdk_version"
+    implementation "com.android.support.constraint:constraint-layout:$constraint_layout_version"
+
+    /*JUnit dependencies*/
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "com.android.support.test:runner:$test_runner_version"
+}
+
+buildscript {
+    ext.sdk_version               = '28.0.0'
+    ext.junit_version             = '4.12'
+    ext.test_runner_version       = '1.0.2'
+    ext.constraint_layout_version = '1.0.2'
+}
