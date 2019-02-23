@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 
+apply plugin: 'kotlin-kapt'
+
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
@@ -16,7 +18,13 @@ android {
 
         applicationId "com.triarc.tutorial.android.room_rxjava"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        kapt {
+            arguments {
+                arg "room.schemaLocation", "$projectDir/schemas"
+            }
+        }
     }
     buildTypes {
         release {
@@ -32,19 +40,44 @@ dependencies {
     /*Kotlin dependency*/
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    /*Android Architecture Components dependencies*/
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
     /*Android SDK dependencies*/
-    implementation "com.android.support:design:$sdk_version"
-    implementation "com.android.support:appcompat-v7:$sdk_version"
-    implementation "com.android.support.constraint:constraint-layout:$constraint_layout_version"
+    implementation "com.google.android.material:material:$material_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+
+    /*RxJava Dependency*/
+    implementation "io.reactivex.rxjava2:rxandroid:$rx_java_android_version"
+
+    /*Dagger dependencies*/
+    implementation "com.google.dagger:dagger:$dagger_version"
+    implementation "com.google.dagger:dagger-android:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+
+    /*Mockito dependencies*/
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+    androidTestImplementation "org.mockito:mockito-android:$mockito_version"
 
     /*JUnit dependencies*/
     testImplementation "junit:junit:$junit_version"
-    androidTestImplementation "com.android.support.test:runner:$test_runner_version"
+    androidTestImplementation "androidx.room:room-testing:$room_version"
+    androidTestImplementation "androidx.test:runner:$test_runner_version"
 }
 
 buildscript {
-    ext.sdk_version               = '28.0.0'
+    ext.room_version              = '2.1.0-alpha04'
     ext.junit_version             = '4.12'
-    ext.test_runner_version       = '1.0.2'
-    ext.constraint_layout_version = '1.0.2'
+    ext.dagger_version            = '2.15'
+    ext.mockito_version           = '2.7.22'
+    ext.material_version          = '1.1.0-alpha03'
+    ext.appcompat_version         = '1.1.0-alpha02'
+    ext.test_runner_version       = '1.1.2-alpha01'
+    ext.rx_java_android_version   = '2.0.2'
+    ext.constraint_layout_version = '2.0.0-alpha3'
 }

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="User Name"
+        android:textSize="16sp"
+        android:textColor="@color/color_title"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="email@gmail.com"
+        android:textSize="14sp"
+        android:textColor="@color/color_sub_title"
+        app:layout_constraintTop_toBottomOf="@+id/user_name"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Book Title"
+        android:textSize="16sp"
+        android:textColor="@color/color_title"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Author"
+        android:textSize="14sp"
+        android:textColor="@color/color_sub_title"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/issue_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:text="Issued On: "
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/color_title"
+        app:layout_constraintTop_toBottomOf="@id/email"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/issue_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:text="21-12-2019"
+        android:textSize="14sp"
+        android:textColor="@color/color_sub_title"
+        app:layout_constraintTop_toTopOf="@id/issue_label"
+        app:layout_constraintStart_toEndOf="@id/issue_label"
+        app:layout_constraintTop_toBottomOf="@id/issue_label"/>
+
+    <TextView
+        android:id="@+id/due_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Due On: "
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/color_title"
+        app:layout_constraintTop_toBottomOf="@id/issue_label"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/due_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:text="22-12-2019"
+        android:textSize="14sp"
+        android:textColor="@color/color_sub_title"
+        app:layout_constraintTop_toTopOf="@id/due_label"
+        app:layout_constraintStart_toEndOf="@id/due_label"
+        app:layout_constraintTop_toBottomOf="@id/due_label"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
