@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">room_rxjava</string>
+    <string name="app_name">Tutorial-Room-RxJava</string>
+
+    <!--Gender-->
+    <string-array name="gender">
+        <item>F</item>
+        <item>M</item>
+    </string-array>
 </resources>

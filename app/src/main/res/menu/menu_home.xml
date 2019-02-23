@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/toolbar_issue_book"
+        android:title="Issue Book"
+        android:icon="@drawable/vector_issue_book"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/toolbar_add_user"
+        android:title="Add User"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/toolbar_add_book"
+        android:title="Add Book"
+        app:showAsAction="never" />
+</menu>

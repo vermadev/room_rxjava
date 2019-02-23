@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/search_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingStart="15dp"
+            android:paddingBottom="15dp"
+            android:paddingEnd="3dp"
+            android:inputType="text"
+            android:maxLines="1"
+            android:hint="Search Book(s) by Name"
+            android:background="@color/color_grey_transparent_25" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_recycler"
+        android:layout_below="@id/search_box"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:dividerHeight="1dp"
+        android:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/search_tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="20dp"
+        android:gravity="center"
+        android:text="Search above to quickly find a book."
+        android:textSize="16sp"
+        android:textColor="@color/color_white"
+        android:background="@color/search_tips_text_bg_color"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/search_no_results"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="20dp"
+        android:gravity="center"
+        android:text="No Result found, try other name(s)"
+        android:textSize="16sp"
+        android:textColor="@color/search_no_results_text_color"
+        android:background="@color/search_tips_text_bg_color"
+        android:visibility="gone" />
+</RelativeLayout>
